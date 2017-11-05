@@ -6,7 +6,7 @@ Pattern Recognition projects for [b-it](http://www.b-it-center.de/)
 2. Utkrist Adhikari
 3. Muhammad Hassaan Farooq
 4. Mihail Luchian
-5.Add more bitte
-6.
+5. Seyithan Dag
+6. 
 7.
 8.
