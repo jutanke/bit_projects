@@ -8,5 +8,5 @@ Pattern Recognition projects for [b-it](http://www.b-it-center.de/)
 4. Mihail Luchian
 5. Seyithan Dag
 6. Asif Altaf
-7.
+7. Pooja Bhatiya
 8.
