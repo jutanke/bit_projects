@@ -7,6 +7,6 @@ Pattern Recognition projects for [b-it](http://www.b-it-center.de/)
 3. Muhammad Hassaan Farooq
 4. Mihail Luchian
 5. Seyithan Dag
-6. 
+6. Asif Altaf
 7.
 8.
