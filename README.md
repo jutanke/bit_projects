@@ -10,3 +10,4 @@ Pattern Recognition projects for [b-it](http://www.b-it-center.de/)
 6. Asif Altaf
 7. Pooja Bhatiya
 8. Abakar Bouba
+9. Mehdi Ali
