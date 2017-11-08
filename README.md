@@ -7,7 +7,9 @@ Pattern Recognition projects for [b-it](http://www.b-it-center.de/)
 3. Muhammad Hassaan Farooq
 4. Mihail Luchian
 5. Seyithan Dag
-6. Asif Altaf
-7. Pooja Bhatiya
-8. Abakar Bouba
-9. Mehdi Ali
+6. Mehdi Ali
+7. Abakar Bouba
+8. Asif Altaf
+9. Pooja Bhatiya
+ 
+
