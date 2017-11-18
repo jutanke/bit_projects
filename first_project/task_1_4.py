@@ -7,15 +7,17 @@ import matplotlib.pyplot as plt
 def drawUnitCircle(p):
     X = []
     Y = []
-    for i in range(5000):
+    epsilon = 0.1
+    for i in range(100000):
         x = np.random.rand()*2-1
         y = np.random.rand()*2-1
         vec = np.asarray([x, y], dtype=float)
-        if np.linalg.norm(vec, p) <= 1:
+        pNorm = np.linalg.norm(vec, p)
+        if pNorm >= 1 - epsilon and pNorm <= 1 + epsilon:
             X.append(x)
             Y.append(y)
 
-    plt.scatter(x=X,y=Y)
+    plt.scatter(x=X,y=Y,s=0.2)
     plt.xlim(-2., 2.)
     plt.ylim(-2., 2.)
     plt.show()
