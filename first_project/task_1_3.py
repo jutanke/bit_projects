@@ -15,8 +15,12 @@ def computeFirstPartialDervK(h, k, alpha):
     for d in h:
         sumLogs += np.log(d)
         sum += ((d / alpha) ** k) * np.log(d / alpha)
+        # print "d/alpha:",k
 
     derivative = N/k - N*np.log(alpha) + sumLogs - sum
+
+    # print "sumLogs:",sumLogs
+    # print "sum:",sum
 
     return derivative
 
@@ -69,7 +73,7 @@ def computePartialDervKAlpha(h, k, alpha):
 def computeGradient(h,k,alpha):
     firstDervK = computeFirstPartialDervK(h, alpha, k)
     firstDervAlpha = computeFirstPartialDervAlpha(h, k, alpha)
-    gradient = np.array([firstDervK,firstDervAlpha],dtype=float)
+    gradient = np.array([firstDervK,firstDervAlpha],dtype="float64")
 
     return gradient
 
@@ -79,18 +83,27 @@ def computeHessian(h,k,alpha):
     secondDervAlpha = computeFirstPartialDervAlpha(h,k,alpha)
     derivKalpha = computePartialDervKAlpha(h,k,alpha)
 
-    hessian = np.array([[secondDerivK,derivKalpha],[derivKalpha,secondDervAlpha]],dtype=float)
+
+    hessian = np.array([[secondDerivK,derivKalpha],[derivKalpha,secondDervAlpha]],dtype="float64")
+
+    print hessian
 
     return hessian
 
 def computeKAndAlpha(h,k,alpha):
-    vecT = np.array([k,alpha],dtype=float)
+    vecT = np.array([k,alpha],dtype="float64")
     hessian = computeHessian(h,k,alpha)
+
     inverseHessian = np.linalg.inv(hessian)
+    print "inverse hessian:",inverseHessian
+    print
     gradient = computeGradient(h,k,alpha)
     gradient = -1. * gradient
+    print "gradient:",gradient
 
     vecT1 = np.add(vecT,np.matmul(inverseHessian,gradient))
+
+    print "pro:",np.matmul(inverseHessian,gradient)
 
     # print "Hessian dim: ", hessian.shape
     # print "Inverse Hessian dim: ", inverseHessian.shape
@@ -112,12 +125,18 @@ if __name__ == "__main__":
             if value == 0:
                 continue
             dataInterest.append(line)
-
         for n,d in enumerate(dataInterest):
             value = int(d[1])
-            h.append(value)
-            x.append(n+1)
+            # print "value:",value
+            l = [n+1 for i in range(value)]
+            h += l
 
+            # h.append(value)
+            x.append(n+1)
+    # print(h)
+    h = np.asarray(h,dtype=np.float64)
+    # print h
+    #print(x)
     # the histogram of the data
     # bins = plt.hist(h)
     #
@@ -134,9 +153,12 @@ if __name__ == "__main__":
 
     k = 1.
     alpha =1.
-    for i in range(2):
+    for i in range(4):
         k,alpha = computeKAndAlpha(h,k=k,alpha=alpha)
-        print "Iter: %s  k:%d  alpha:%d" % (i+1,k,alpha)
+        # print ("K:",k)
+        # print ("alpha:",alpha)
+        # print ("-------")
+        print "Iter: %s  k:%f  alpha:%f" % (i+1,k,alpha)
 
 
 
