@@ -20,13 +20,14 @@ def plotData2D(X, filename=None):
     xmin = X[0,:].min()
     xmax = X[0,:].max()
 
-    # setting the x and y minimum to 0 to include only positive entries
-    axs.set_xlim(0, xmax+10)
-    axs.set_ylim(0, X[1,:].max()+10)
+    axs.set_xlim(xmin-10, xmax+10)
+    axs.set_ylim(-2, X[1,:].max()+10)
 
     # set properties of the legend of the plot
     leg = axs.legend(loc='upper left', shadow=True, fancybox=True, numpoints=1)
     leg.get_frame().set_alpha(0.5)
+
+    plt.title(filename)
 
     # either show figure on screen or write it to disk
     if filename == None:
@@ -36,30 +37,20 @@ def plotData2D(X, filename=None):
                     papertype=None, format='pdf', transparent=False,
                     bbox_inches='tight', pad_inches=0.1)
     plt.close()
-    
-
-
-
 
 if __name__ == "__main__":
-    #######################################################################
-    # 1st alternative for reading multi-typed data from a text file
-    #######################################################################
-    # define type of data to be read and read data from file
-    dt = np.dtype([('w', np.float), ('h', np.float), ('g', np.str_, 1)])
-    data = np.loadtxt('whData.dat', dtype=dt, comments='#', delimiter=None)
 
-    # read height, weight and gender information into 1D arrays
-    ws = np.array([d[0] for d in data])
-    hs = np.array([d[1] for d in data])
-    gs = np.array([d[2] for d in data]) 
-
-
-    ##########################################################################
-    # 2nd alternative for reading multi-typed data from a text file
-    ##########################################################################
     # read data as 2D array of data type 'object'
     data = np.loadtxt('whData.dat',dtype=np.object,comments='#',delimiter=None)
+
+    # removing outliers. i.e. the rows with negative values of weight and size.
+    positive_data = list()
+    for row in data:
+        if float(row[0]) >= 0.0 and float(row[1]) >= 0.0:
+            positive_data.append(row.tolist())
+            pass
+        pass
+    data = np.array(positive_data)
 
     # read height and weight data into 2D array (i.e. into a matrix)
     X = data[:,0:2].astype(np.float)
@@ -71,15 +62,15 @@ if __name__ == "__main__":
     X = X.T
 
     # now, plot weight vs. height using the function defined above
-    plotData2D(X, 'plotWH.pdf')
+    plotData2D(X, "plotWH.pdf")
 
     # next, let's plot height vs. weight 
     # first, copy information rows of X into 1D arrays
     w = np.copy(X[0,:])
     h = np.copy(X[1,:])
-    
+
     # second, create new data matrix Z by stacking h and w
     Z = np.vstack((h,w))
 
     # third, plot this new representation of the data
-    plotData2D(Z, 'plotHW.pdf')
+    plotData2D(Z, "plotHW.pdf")
