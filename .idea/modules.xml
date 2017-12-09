@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../deeplearningexp/Relation_Extraction_Deep_Learning/.idea/Relation_Extraction_Deep_Learning.iml" filepath="$PROJECT_DIR$/../deeplearningexp/Relation_Extraction_Deep_Learning/.idea/Relation_Extraction_Deep_Learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bit_projects.iml" filepath="$PROJECT_DIR$/.idea/bit_projects.iml" />
       <module fileurl="file://$PROJECT_DIR$/../deeplearningexp/.idea/deeplearningexp.iml" filepath="$PROJECT_DIR$/../deeplearningexp/.idea/deeplearningexp.iml" />
     </modules>
