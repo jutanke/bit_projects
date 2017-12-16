@@ -4,9 +4,9 @@ from numpy.linalg import inv
 import matplotlib.pyplot as plt
 
 def predict(x,w):
-    prediction = 0.
-    for i, w_i in enumerate(w):
-        prediction += (w_i*(x**i))
+    x_vec = np.array([x ** i for i in range(len(w))])
+    prediction = np.matmul(w, np.transpose(x_vec))
+
     return prediction
 
 def leastSquares(Xs,Ys,d):
