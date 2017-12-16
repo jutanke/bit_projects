@@ -49,10 +49,18 @@ if __name__ == '__main__':
 
     fig = plt.figure(figsize=(8, 8))
     ax1 = fig.add_subplot(111)
-    ax1.set_ylim([-200, 200])
-    # ax1.scatter([float(d[1]) for d in data], [float(d[0]) for d in data], label='Data')
+    ax1.set_ylim([-10, 200])
 
+
+    predictions = []
     for x_i in data:
         height = float(x_i[1])
         prediction = predict(height,theta_MAP)
+        predictions.append(prediction)
         print "height: %f  predicted weight: %f" % (height,prediction)
+
+    ax1.scatter([float(d[1]) for d in data], [float(d[0]) for d in data], label='Data')
+    label = 'MAP'
+    ax1.scatter([float(d[1]) for d in data], predictions, label=label)
+    plt.legend()
+    plt.show()

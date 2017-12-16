@@ -2,6 +2,7 @@
 import numpy as np
 from numpy.linalg import inv
 import matplotlib.pyplot as plt
+import sys
 
 def predict(x,w):
     x_vec = np.array([x ** i for i in range(len(w))])
@@ -9,12 +10,13 @@ def predict(x,w):
 
     return prediction
 
-def leastSquares(Xs,Ys,d):
-    X = [[x**(i) for i in range(d+1)] for x in Xs]
-    X = np.asarray(X,dtype=float)
-    pseudoInverse = np.matmul(inv(np.matmul(np.transpose(X), X)),np.transpose(X))
-    w = np.matmul(pseudoInverse,Ys)
-    return w
+def leastSquares(X_design,Ys):
+
+    X_T_X = np.matmul(np.transpose(X_design), X_design)
+    inverse = np.linalg.inv(X_T_X)
+    theta_MLE = np.matmul(np.matmul(inverse, np.transpose(X_design)), Ys)
+
+    return theta_MLE
 
 if __name__ == '__main__':
     dataPath = '../data/first_project/whData.dat'
@@ -38,16 +40,24 @@ if __name__ == '__main__':
     gs = gs[wIndex]
 
     Ds = [1,5,10]
-    fig = plt.figure(figsize=(8, 8))
-    ax1 = fig.add_subplot(111)
-    ax1.set_ylim([-200, 200])
-    ax1.scatter([float(d[1]) for d in data], [float(d[0]) for d in data], label='Data')
+    # fig = plt.figure(figsize=(8, 8))
+    # ax1 = fig.add_subplot(111)
+    # ax1.set_ylim([-200, 200])
+    # ax1.scatter([float(d[1]) for d in data], [float(d[0]) for d in data], label='Data')
+    #
+    # for d in Ds:
+    #     w = leastSquares(hs,ws,d=d)
+    #     l = 'Polynomial of degree: '+ str(d)
+    #     ax1.scatter([float(d[1]) for d in data], [predict(float(d[1]), w) for d in data], label=l)
+    #
+    # plt.legend()
+    # plt.show()
 
-    for d in Ds:
-        w = leastSquares(hs,ws,d=d)
-        l = 'Polynomial of degree: '+ str(d)
-        ax1.scatter([float(d[1]) for d in data], [predict(float(d[1]), w) for d in data], label=l)
-
-    plt.legend()
-    plt.show()
+    d = 5
+    X_design = np.array([[x ** (i) for i in range(d + 1)] for x in hs])
+    theta_MLE = leastSquares(X_design=X_design,Ys=ws)
+    for x_i in data:
+        height = float(x_i[1])
+        prediction = predict(height,theta_MLE)
+        print "height: %f  predicted weight: %f" % (height,prediction)
 
