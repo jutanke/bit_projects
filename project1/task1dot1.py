@@ -42,13 +42,13 @@ def read_data_alt_2(filter_neg=False):
 
 def plot_data(w1,h1, w2, h2):
     fig = plt.figure()
-    ax1 = fig.add_subplot(121)
+    ax1 = fig.add_subplot(211)
     ax1.plot(w1, h1, 'ro')
     ax1.set_title("Plot with outliers (negative values)")
     ax1.set_xlabel('Weight')
     ax1.set_ylabel('Height')
 
-    ax2 = fig.add_subplot(122)
+    ax2 = fig.add_subplot(212)
     ax2.plot(w2, h2, 'ro')
     ax2.set_title("Plot with no outliers")
     ax2.set_xlabel('weight')

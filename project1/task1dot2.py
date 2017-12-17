@@ -46,6 +46,11 @@ def gaussian_1d(x, mean, stddev):
 
 def plot_norm_fit(arr):
     mean, stddev = fit_norm_dist(arr)
+    assert mean == np.mean(arr)
+    assert stddev == np.std(arr)
+
+    print("  Empirical mean: %f" % mean)
+    print("  Empirical std dev: %f" % stddev)
 
     # generate (x,y) points from the gaussian function parameterised by mean, stddev
     # Range (mean - 4 * stddev, mean + 4 * stddev) should capture more than 95% of the distribution

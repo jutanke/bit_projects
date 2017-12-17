@@ -5,6 +5,9 @@ Created on Sun Nov 19 18:24:03 2017
 
 @author: utkrist
 """
+
+
+# ERRRRRRRR
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.misc as msc
@@ -32,7 +35,7 @@ def countForegroundPixels(img):
 
     scale_factors = []
     num_boxes = []
-    for i in range(1, L):
+    for i in range(1, L-2):
 
         # Scaling Factor
         si = 1./2.**i
@@ -43,16 +46,16 @@ def countForegroundPixels(img):
 
         # Top left corner of a box
         px = 0
-        py = 0
 
         # Number of boxes containing foreground pixel
         ni = 0
-        while px + wi <= w and py + hi <= h:
-            if True in img[px:px+wi+1, py:py+hi+1]:
-                ni += 1
+        while px + wi <= w:
+            py = 0
+            while py + hi <= h:
+                if True in img[px:px+wi, py:py+hi]:
+                    ni += 1
+                py = py + hi
             px = px + wi
-            py = py + hi
-
         scale_factors.append(si)
         num_boxes.append(ni)
 
@@ -68,9 +71,11 @@ def get_fractal_dim(imgname):
 
     # Divide the image into boxes and count the ones containing foregroud pixels
     scale_factors, num_boxes = countForegroundPixels(img)
+    print("    Num boxes: " + str(num_boxes))
+
 
     x = np.log2(1.0/np.array(scale_factors))
-    y = np.log2(num_boxes)
+    y = np.log(num_boxes)
 
     # Perform least square fit for the equation
     # D * log(1/s_i) + b = log(n_i)
@@ -102,13 +107,17 @@ def get_fractal_dim(imgname):
 
 def main():
     print("Task 1.5")
-    print("    Estimating the dimension of fractal objects in an image")
-
+    print("  Estimating the dimension of fractal objects in an image")
+    
     img1 = 'lightning-3'
     img2 = 'tree-2'
 
+    print("  Image: %s" % img1)
     fdim1 = get_fractal_dim(img1)
-    fdim2 = get_fractal_dim(img2)
+    print("    Fractal dimension: %f" % fdim1)
 
-    print("Fractal dimension of %s: %f" % (img1, fdim1))
-    print("Fractal dimension of %s: %f" % (img2, fdim2))
+
+    print("  Image: %s" % img2)
+    fdim2 = get_fractal_dim(img2)
+    print("    Fractal dimension: %f" % fdim2)
+
