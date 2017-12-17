@@ -7,7 +7,6 @@ import sys
 def predict(x,w):
     x_vec = np.array([x ** i for i in range(len(w))])
     prediction = np.matmul(w, np.transpose(x_vec))
-
     return prediction
 
 def leastSquares(X_design,Ys):

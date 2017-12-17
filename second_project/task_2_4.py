@@ -70,6 +70,8 @@ if __name__ == '__main__':
     print "theta_MLE_126: ", theta_MLE_126
     print "prediction_126: ", prediction_126
 
+    print '-------------------------'
+
     S = [1,2,3]
 
     featureVec = createFeatureVec(S)
@@ -91,6 +93,8 @@ if __name__ == '__main__':
 
     print "theta_feature_MLE_110: ", theta_feature_MLE_110
     print "prediction_feature_110: ", prediction_feature_110
+
+    print
 
     rule = 126
     targetString = np.binary_repr(rule, width=2 ** 3)
