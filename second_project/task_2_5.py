@@ -1,6 +1,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import timeit
 
 def k_nearest_neighbors(X, k, x_new):
     argMinSorted = np.argsort(np.sum((X-x_new)**2,axis=1),axis=0)
@@ -23,6 +24,7 @@ if __name__ == '__main__':
     accuracies = []
 
     for k in K:
+        start = timeit.default_timer()
         predictions = []
         for x_T in X_Test:
             kNearestNeighbors = k_nearest_neighbors(X, k, x_T)
@@ -31,8 +33,9 @@ if __name__ == '__main__':
         accuracy = np.sum(
             np.array([1. if pred == Y_Test[i] else 0. for i, pred in enumerate(predictions)]), axis=0) / float(
             len(Y_Test))
+        stop = timeit.default_timer()
         accuracies.append(accuracy)
-        print "k: %d  accuracy: %f" % (k,accuracy)
+        print "k: %d  accuracy: %f  runtime: %f" % (k,accuracy,stop - start)
 
     plt.bar(K, accuracies, width=0.4, color='r')
     plt.ylabel('Accuracy')

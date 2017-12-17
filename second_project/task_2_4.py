@@ -1,7 +1,7 @@
 import itertools
 from itertools import chain, combinations
 import numpy as np
-import sys
+
 
 def createFeatureVec(S):
     pSet = powerset(S)
