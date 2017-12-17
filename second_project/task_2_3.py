@@ -3,9 +3,9 @@ import numpy as np
 from numpy.linalg import inv
 import matplotlib.pyplot as plt
 
-def predict(x,w):
-    x_vec = np.array([x**i for i in range(len(w))])
-    prediction = np.matmul(w,np.transpose(x_vec))
+def predict(x, theta):
+    x_vec = np.array([x ** i for i in range(len(theta))])
+    prediction = np.matmul(theta, np.transpose(x_vec))
 
     return prediction
 
@@ -50,17 +50,20 @@ if __name__ == '__main__':
     fig = plt.figure(figsize=(8, 8))
     ax1 = fig.add_subplot(111)
     ax1.set_ylim([-10, 200])
-
+    allHeights = []
+    allWeights = []
 
     predictions = []
     for x_i in data:
         height = float(x_i[1])
+        allHeights.append(height)
+        allWeights.append(float(x_i[0]))
         prediction = predict(height,theta_MAP)
         predictions.append(prediction)
         print "height: %f  predicted weight: %f" % (height,prediction)
 
-    ax1.scatter([float(d[1]) for d in data], [float(d[0]) for d in data], label='Data')
+    ax1.scatter(allHeights, allWeights, label='Data')
     label = 'MAP'
-    ax1.scatter([float(d[1]) for d in data], predictions, label=label)
+    ax1.scatter(allHeights, predictions, label=label)
     plt.legend()
     plt.show()
