@@ -1,5 +1,6 @@
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 def k_nearest_neighbors(X, k, x_new):
     argMinSorted = np.argsort(np.sum((X-x_new)**2,axis=1),axis=0)
@@ -19,6 +20,7 @@ if __name__ == '__main__':
     Y_Test = testData[:,2]
 
     K = [1,3,5]
+    accuracies = []
 
     for k in K:
         predictions = []
@@ -29,5 +31,12 @@ if __name__ == '__main__':
         accuracy = np.sum(
             np.array([1. if pred == Y_Test[i] else 0. for i, pred in enumerate(predictions)]), axis=0) / float(
             len(Y_Test))
+        accuracies.append(accuracy)
         print "k: %d  accuracy: %f" % (k,accuracy)
+
+    plt.bar(K, accuracies, width=0.4, color='r')
+    plt.ylabel('Accuracy')
+    plt.title('k Nearest Neighbors')
+    plt.ylim(0,1.)
+    plt.show()
 
