@@ -26,9 +26,7 @@ def powerset(iterable):
     return chain.from_iterable(combinations(xs,n) for n in range(len(xs)+1))
 
 def predict(X_design, theta):
-
-    prediction = np.matmul(X_design,np.transpose(theta))
-
+    prediction = np.matmul(X_design, theta)
     return prediction
 
 
