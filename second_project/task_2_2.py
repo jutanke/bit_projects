@@ -1,41 +1,42 @@
 
 import numpy as np
-from scipy.stats import multivariate_normal
-import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
+
+    # Load data
     dataPath = '../data/first_project/whData.dat'
     data = np.loadtxt(dataPath, dtype=np.object, comments='#', delimiter=None)
-    ws = []
-    hs = []
-    gs = []
-
-    for d in data:
-        ws.append(d[0])
-        hs.append(d[1])
-        gs.append(d[2])
+    ws = data[:,0]
+    hs = data[:,1]
+    gs = data[:,2]
 
     ws = np.array(ws, dtype=float)
     hs = np.array(hs, dtype=float)
     gs = np.array(gs)
 
+    # Handle outliers
     wIndex = ((ws > 0) * 1).nonzero()
+    wIndexOutliers = ((ws < 0) * 1).nonzero()
+
+    hsOut = hs[wIndexOutliers]
     ws = ws[wIndex]
     hs = hs[wIndex]
     gs = gs[wIndex]
 
-    X = np.transpose(np.array([ws,hs],dtype=float))
-    print X.shape
+    # Shape = (#variables,#values)
+    X = np.array([ws,hs],dtype=float)
 
-    mean = np.mean(X, axis=0)
-    print mean
-    cov = np.cov(X, rowvar=0)
-    print cov
-    heights = np.linspace(100, 200,100)
-    weights= np.linspace(50, 120, 100)
-    samples = np.transpose(np.array([heights, weights]))
-    print samples
-    pdf = multivariate_normal.pdf(samples,mean=mean,cov=cov)
-    # drawnSamples = np.random.multivariate_normal(mean=mean,cov=cov)
-    plt.plot(samples, pdf, 'k', linewidth=2)
-    plt.show()
+    # Compute parameters of bivariate Gaussian
+    meanWeight = np.mean(ws)
+    meanHeight = np.mean(hs)
+    sdWeight = np.std(ws)
+    sdHeight = np.mean(hs)
+    cov_h_w = np.cov(X)[0,1]
+    pearsonCor = cov_h_w/(sdHeight*sdWeight)
+
+
+    # Predict weights for outliers
+    for hOut in hsOut:
+        predWeight = meanWeight + pearsonCor*(sdWeight/sdHeight)*(hOut-meanHeight)
+        print "height of outlier: %f  predicted weight: %f" % (hOut, predWeight)
+

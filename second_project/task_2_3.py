@@ -67,3 +67,12 @@ if __name__ == '__main__':
     ax1.scatter(allHeights, predictions, label=label)
     plt.legend()
     plt.show()
+
+    # xt = np.linspace(150,200,1000)
+    # yt = np.array([predict(x,theta_MAP) for x in xt])
+    # plt.plot(xt,yt)
+    # plt.legend()
+    # plt.show()
+
+
+
