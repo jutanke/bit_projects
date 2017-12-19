@@ -38,5 +38,5 @@ if __name__ == '__main__':
     # Predict weights for outliers
     for hOut in hsOut:
         predWeight = meanWeight + pearsonCor*(sdWeight/sdHeight)*(hOut-meanHeight)
-        print "height of outlier: %f  predicted weight: %f" % (hOut, predWeight)
+        print("height of outlier: %f  predicted weight: %f" % (hOut, predWeight))
 

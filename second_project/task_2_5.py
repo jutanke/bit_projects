@@ -38,7 +38,7 @@ if __name__ == '__main__':
             len(Y_Test))
         stop = timeit.default_timer()
         accuracies.append(accuracy)
-        print "k: %d  accuracy: %f  runtime: %f" % (k,accuracy,stop - start)
+        print("k: %d  accuracy: %f  runtime: %f" % (k,accuracy,stop - start))
 
     plt.bar(K, accuracies, width=0.4, color='r')
     plt.ylabel('Accuracy')

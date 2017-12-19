@@ -58,5 +58,5 @@ if __name__ == '__main__':
     for x_i in data:
         height = float(x_i[1])
         prediction = predict(height,theta_MLE)
-        print "height: %f  predicted weight: %f" % (height,prediction)
+        print("height: %f  predicted weight: %f" % (height,prediction))
 

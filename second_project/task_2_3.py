@@ -2,7 +2,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
-
 def predict(X_design, theta):
     predictions = np.matmul(X_design,theta)
     return predictions
@@ -38,13 +37,15 @@ if __name__ == '__main__':
     # Load data
     dataPath = '../data/first_project/whData.dat'
     data = np.loadtxt(dataPath, dtype=np.object, comments='#', delimiter=None)
-    ws = data[:,0]
-    hs = data[:,1]
-    gs = data[:,2]
+
+    ws = data[:, 0].astype('int32')
+    hs = data[:, 1].astype('int32')
+    gs = data[:, 2]
 
     wsAll = np.array(ws, dtype=float)
     hsAll = np.array(hs, dtype=float)
     gsAll = np.array(gs)
+
 
     # Remove outliers
     wIndex = ((ws > 0) * 1).nonzero()
@@ -66,6 +67,7 @@ if __name__ == '__main__':
     X_design_d_1 = commputeDesignX(X=hs,d=1)
     theta_MLE_d_1 = leastSquaresStable(X_design=X_design_d_1,Y=ws)
     predictions_d_1 = predict(X_design=X_design_d_1, theta=theta_MLE_d_1)
+
     residuals = predictions_d_1 - ws
     varianceResiduals = np.var(residuals)
 
@@ -73,15 +75,15 @@ if __name__ == '__main__':
     SigmaSquare  = [varianceResiduals,1.,3000.]
 
     theta_MAP = bayesianRegression(X_design=X_design, Y=ws, sigmaSquare=sigmaSquare, sigma_0_square=sigma_0_square)
-    print "theta_MLE_unstable: %s \n" % thetaMLE_Unstable
-    print "theta_MLE_Stable: %s \n" % thetaMLE_Stable
-    print "theta_MAP: %s \n" % theta_MAP
+    print("theta_MLE_unstable: %s \n" % thetaMLE_Unstable)
+    print("theta_MLE_Stable: %s \n" % thetaMLE_Stable)
+    print("theta_MAP: %s \n" % theta_MAP)
 
     predictions = predict(X_design_hsAll_d_5, theta_MAP)
 
-    print "-----------Predictions based on Sigma^2= Variance of residuals-----------"
+    print("-----------Predictions based on Sigma^2= Variance of residuals-----------")
     for i,height in enumerate(hsAll):
-        print "height: %f  predicted weight: %f" % (height, predictions[i])
+        print("height: %f  predicted weight: %f" % (height, predictions[i]))
 
     # Plot results
     fig, axs = plt.subplots(2,2,figsize=(10, 10))
@@ -97,7 +99,7 @@ if __name__ == '__main__':
     axs[0].set_ylabel('Weight')
     axs[0].scatter(hsAll, wsAll, label='Data')
 
-    axs[0].plot(hsAll, predictions_d_1, 'C2',label='Least Squares-1d')
+    axs[0].plot(hs, predictions_d_1, 'C2',label='Least Squares-1d')
     axs[0].legend()
 
     for i,sigmaSquare in enumerate(SigmaSquare):

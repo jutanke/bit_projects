@@ -49,10 +49,10 @@ if __name__ == '__main__':
 
     prediction_110 = predict(X_design,theta_MLE_110)
 
-    print "theta_MLE_110: ", theta_MLE_110
-    print "prediction_110: ", prediction_110
+    print("theta_MLE_110: ", theta_MLE_110)
+    print("prediction_110: ", prediction_110)
 
-    print
+    print()
 
     rule = 126
     targetString = np.binary_repr(rule, width=2 ** 3)
@@ -62,10 +62,10 @@ if __name__ == '__main__':
 
     prediction_126 = predict(X_design, theta_MLE_126)
 
-    print "theta_MLE_126: ", theta_MLE_126
-    print "prediction_126: ", prediction_126
+    print("theta_MLE_126: ", theta_MLE_126)
+    print("prediction_126: ", prediction_126)
 
-    print '-------------------------'
+    print('-------------------------')
 
 
     # Compute theta based on feature based design matrix
@@ -84,10 +84,10 @@ if __name__ == '__main__':
 
     prediction_feature_110 = predict(feature_X_Design, theta_feature_MLE_110)
 
-    print "theta_feature_MLE_110: ", theta_feature_MLE_110
-    print "prediction_feature_110: ", prediction_feature_110
+    print("theta_feature_MLE_110: ", theta_feature_MLE_110)
+    print("prediction_feature_110: ", prediction_feature_110)
 
-    print
+    print()
 
     rule = 126
     targetString = np.binary_repr(rule, width=2 ** 3)
@@ -97,8 +97,8 @@ if __name__ == '__main__':
 
     prediction_feature_126 = predict(feature_X_Design, theta_feature_MLE_126)
 
-    print "theta_feature_MLE_126: ", theta_feature_MLE_126
-    print "prediction_feature_126: ", prediction_feature_126
+    print("theta_feature_MLE_126: ", theta_feature_MLE_126)
+    print("prediction_feature_126: ", prediction_feature_126)
 
 
 
