@@ -58,7 +58,6 @@ if __name__ == '__main__':
     sigmaSquare = 1.
 
     X_design_hsAll_d_5 = commputeDesignX(X=hsAll, d=5)
-    X_design_hsAll_d_1 = commputeDesignX(X=hsAll, d=1)
     X_design = commputeDesignX(X=hs,d=5)
     thetaMLE_Unstable = leastSquaresUnstable(X_design=X_design, Y=ws)
     thetaMLE_Stable = leastSquaresStable(X_design=X_design, Y=ws)
@@ -66,7 +65,7 @@ if __name__ == '__main__':
     # Select sigmaSquare
     X_design_d_1 = commputeDesignX(X=hs,d=1)
     theta_MLE_d_1 = leastSquaresStable(X_design=X_design_d_1,Y=ws)
-    predictions_d_1 = predict(X_design=X_design_hsAll_d_1, theta=theta_MLE_d_1)
+    predictions_d_1 = predict(X_design=X_design_d_1, theta=theta_MLE_d_1)
     residuals = predictions_d_1 - ws
     varianceResiduals = np.var(residuals)
 

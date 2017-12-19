@@ -18,9 +18,6 @@ def createFeatureVec(S):
 
 '''https://stackoverflow.com/questions/374626/how-can-i-find-all-the-subsets-of-a-set-with-exactly-n-elements'''
 def powerset(iterable):
-    """
-    powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)
-    """
     xs = list(iterable)
     # note we return an iterator rather than a list
     return chain.from_iterable(combinations(xs,n) for n in range(len(xs)+1))
@@ -70,12 +67,10 @@ if __name__ == '__main__':
 
     print '-------------------------'
 
-    S = [1,2,3]
-
-    featureVec = createFeatureVec(S)
 
     # Compute theta based on feature based design matrix
     n = 3
+    S = [i +1 for i in range(n)]
     tupleList = reversed(list(itertools.product([0, 1], repeat=n)))
     X_design = [list(tuple) for tuple in tupleList]
     X_design = np.array([[1. if float(x) == 1 else -1. for x in subList] for subList in X_design])

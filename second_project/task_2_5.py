@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import timeit
 
+'''
+https://www.researchgate.net/publication/283568278_NumPy_SciPy_Recipes_for_Data_Science_Computing_Nearest_Neighbors
+'''
 def k_nearest_neighbors(X, k, x_new):
     argMinSorted = np.argsort(np.sum((X-x_new)**2,axis=1),axis=0)
     return argMinSorted[:k]
