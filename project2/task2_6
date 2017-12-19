@@ -71,7 +71,7 @@ bx.set_ylim((30, 120))
 def ReverseAxis(axis):
     return math.fabs(axis - 1)
 
-def SearchParent(node, axis): #search the parent (nth parent) with different axis
+def SearchParent(node, axis): #search the parent (nth parent) with the given axis
     search = node
     while search.parent != None:
         if search.parent.axis == axis:
