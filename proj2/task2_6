@@ -1,0 +1,114 @@
+'''
+Created on 12 Dec 2017
+
+@author: seyit
+'''
+import numpy as np
+import scipy as sp
+import math
+import matplotlib.pyplot as plt
+from enum import Enum
+import PyQt5
+from PyQt5.QtWidgets import QApplication
+import os
+from numpy.linalg import inv, pinv
+
+pyqt = os.path.dirname(PyQt5.__file__)
+QApplication.addLibraryPath(os.path.join(pyqt, "qt\plugins"))
+
+np.set_printoptions(precision=1)
+points = np.genfromtxt('data2-train.dat',
+                  dtype=float,
+                  comments='#',
+                  delimiter=None)
+
+fig2 = plt.figure(figsize=(16,16))
+bx = fig2.add_subplot(111)
+
+class NodeType(Enum):
+    LEFT = 0
+    RIGHT = 1
+class DimensionSelection(Enum):    
+    ALTERNATE = 0
+    VARIANCE = 1
+class SplitType(Enum):
+    MIDPOINT = 0
+    MEDIAN = 1
+
+class Node:
+    def __init__(self, point=None, left=None, right=None, depth=None, axis=None, parent=None, nodetype = None):
+        self.point = point
+        self.left = left
+        self.right = right
+        self.depth = depth
+        self.axis = axis
+        self.parent = parent
+        self.nodetype = nodetype
+
+def BuildKDTree(node, points, depth, parent, nodetype, dim, sp):
+    if(dim == DimensionSelection.ALTERNATE):
+        axis = depth % 2
+    else:
+        axis = 0 if np.var(points, 0)[0] > np.var(points, 0)[1] else 1
+    if(sp == SplitType.MEDIAN):
+        points = points[points[:,axis].argsort()]
+        index = int(math.floor(points.shape[0]/2))
+    node = Node(point = points[index], depth=depth, axis = axis, parent = parent, nodetype=nodetype)
+    #bx.scatter(node.point[0], node.point[1])
+    if(points.size > 3):
+        node.left = BuildKDTree(node.left, points[:index], depth=depth+1, parent = node, nodetype=NodeType.LEFT, dim = dim, sp = sp)
+        node.right = BuildKDTree(node.right, points[index:], depth=depth+1, parent = node, nodetype=NodeType.RIGHT, dim = dim, sp = sp)
+        return node
+    else:
+        bx.scatter(node.point[0], node.point[1])
+        return None
+    
+root = Node()      
+root = BuildKDTree(root, points, depth = 0, parent = None, nodetype = None, 
+                   dim = DimensionSelection.ALTERNATE, sp = SplitType.MEDIAN)
+
+bx.set_xlim((120, 220))
+bx.set_ylim((30, 120))
+
+def ReverseAxis(axis):
+    return math.fabs(axis - 1)
+
+def SearchParent(node, axis): #search the parent (nth parent) with different axis
+    search = node
+    while search.parent != None:
+        if search.parent.axis == axis:
+            return search.parent
+        else:
+            search = search.parent
+    
+def PlotKDTree(node, parent, lx, hx, ly, hy, ax):
+    #if node.depth > 3:
+        #return
+    diffparent = SearchParent(node, ReverseAxis(node.axis))
+    if node.axis == 0:
+        if node.nodetype != None and diffparent != None:
+            if node.nodetype == NodeType.LEFT:
+                hy = diffparent.point[1]
+            else:
+                ly = diffparent.point[1]
+        plt.plot([node.point[0], node.point[0]], [ly, hy], color='black')
+    else:
+        if node.nodetype != None and diffparent != None:
+            if node.nodetype == NodeType.LEFT:
+                hx = diffparent.point[0]
+            else:
+                lx = diffparent.point[0]
+            #if(diffparent.parent != None):
+                #lx = diffparent.parent.point[0]
+        plt.plot([lx, hx], [node.point[1], node.point[1]], color='green')
+    
+    plt.plot(node.point[0], node.point[1], 'ko')
+
+    if node.left != None:
+        PlotKDTree(node = node.left, parent = node, lx = lx, hx = hx, ly = ly, hy = hy, ax = ax)
+    if node.right != None:
+        PlotKDTree(node = node.right, parent = node, lx = lx, hx = hx, ly = ly, hy = hy, ax = ax)
+    
+PlotKDTree(root, None, 0, 220, 0, 120, bx)
+#3,5
+plt.show()
