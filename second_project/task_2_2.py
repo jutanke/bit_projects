@@ -31,8 +31,8 @@ if __name__ == '__main__':
     # Compute parameters of bivariate Gaussian
     meanWeight = np.mean(ws)
     meanHeight = np.mean(hs)
-    sdWeight = np.sqrt(np.var(ws,ddof=1))#np.std(ws)
-    sdHeight = np.sqrt(np.var(hs,ddof=1))#np.mean(hs)
+    sdWeight = np.sqrt(np.var(ws,ddof=1))
+    sdHeight = np.sqrt(np.var(hs,ddof=1))
     cov_h_w = np.cov(X,bias=False)[0,1]
     pearsonCor = cov_h_w/(sdHeight*sdWeight)
 
@@ -42,6 +42,7 @@ if __name__ == '__main__':
     for hOut in hsOut:
         predWeight = meanWeight + pearsonCor*(sdWeight/sdHeight)*(hOut-meanHeight)
         print("height of outlier: %f  predicted weight: %f" % (hOut, predWeight))
+
 
     # Second Version: SDs are biased
     meanWeight = np.mean(ws)
@@ -56,3 +57,5 @@ if __name__ == '__main__':
     for hOut in hsOut:
         predWeight = meanWeight + pearsonCor*(sdWeight/sdHeight)*(hOut-meanHeight)
         print("height of outlier: %f  predicted weight: %f" % (hOut, predWeight))
+
+

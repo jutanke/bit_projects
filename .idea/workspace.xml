@@ -16,19 +16,19 @@
     <SUITE FILE_PATH="coverage/bit_projects$task_1_3.coverage" NAME="task_1_3 Coverage Results" MODIFIED="1511178473244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_1_4.coverage" NAME="task_1_4 Coverage Results" MODIFIED="1511007090814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_2_4.coverage" NAME="task_2_4 Coverage Results" MODIFIED="1513686220855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
-    <SUITE FILE_PATH="coverage/bit_projects$task_2_2.coverage" NAME="task_2_2 Coverage Results" MODIFIED="1513801736470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
+    <SUITE FILE_PATH="coverage/bit_projects$task_2_2.coverage" NAME="task_2_2 Coverage Results" MODIFIED="1513808593482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_2_5.coverage" NAME="task_2_5 Coverage Results" MODIFIED="1513686229990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$whExample.coverage" NAME="whExample Coverage Results" MODIFIED="1510175096454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
-    <SUITE FILE_PATH="coverage/bit_projects$task_2_1.coverage" NAME="task_2_1 Coverage Results" MODIFIED="1513799166977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
+    <SUITE FILE_PATH="coverage/bit_projects$task_2_1.coverage" NAME="task_2_1 Coverage Results" MODIFIED="1513808488954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_1_5.coverage" NAME="task_1_5 Coverage Results" MODIFIED="1511713329678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
-    <SUITE FILE_PATH="coverage/bit_projects$task_2_3.coverage" NAME="task_2_3 Coverage Results" MODIFIED="1513798451481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
+    <SUITE FILE_PATH="coverage/bit_projects$task_2_3.coverage" NAME="task_2_3 Coverage Results" MODIFIED="1513808532539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="task_2_3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/second_project/task_2_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
+            <state relative-caret-position="484">
               <caret line="114" column="35" lean-forward="false" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
@@ -40,11 +40,9 @@
       <file leaf-file-name="task_2_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/second_project/task_2_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-              <folding>
-                <element signature="e#1#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,8 +50,18 @@
       <file leaf-file-name="task_2_2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/second_project/task_2_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="53" column="10" lean-forward="false" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+            <state relative-caret-position="510">
+              <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fromnumeric.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/core/fromnumeric.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="2911" column="4" lean-forward="false" selection-start-line="2911" selection-start-column="4" selection-end-line="2911" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -64,16 +72,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="145">
               <caret line="1368" column="32" lean-forward="false" selection-start-line="1368" selection-start-column="31" selection-end-line="1368" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fromnumeric.py" pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/core/fromnumeric.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="2849" column="5" lean-forward="false" selection-start-line="2849" selection-start-column="4" selection-end-line="2849" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -343,8 +341,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.task_2_2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.task_2_1" />
-        <item index="2" class="java.lang.String" itemvalue="Python.task_2_3" />
+        <item index="1" class="java.lang.String" itemvalue="Python.task_2_3" />
+        <item index="2" class="java.lang.String" itemvalue="Python.task_2_1" />
         <item index="3" class="java.lang.String" itemvalue="Python.task_2_5" />
         <item index="4" class="java.lang.String" itemvalue="Python.task_2_4" />
       </list>
@@ -487,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513799181321</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Extended task 2_2">
+      <created>1513801766917</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1513801766917</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -534,14 +539,14 @@
     <MESSAGE value="Minor changes" />
     <MESSAGE value="Removed errors and changed to python3" />
     <MESSAGE value="Corrected task 2_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected task 2_1" />
+    <MESSAGE value="Extended task 2_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extended task 2_2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/first_project/myspace.csv" />
     <entry file="file://$PROJECT_DIR$/first_project/task_1_3.py" />
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-43583300/numpy/core/umath.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -798,16 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second_project/task_2_3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="114" column="35" lean-forward="false" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/first_project/whData.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -816,13 +811,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/second_project/task_2_1.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-1314125682/numpy/core/umath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="157">
+          <caret line="4535" column="4" lean-forward="false" selection-start-line="4535" selection-start-column="4" selection-end-line="4535" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -836,16 +829,34 @@
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="2849" column="5" lean-forward="false" selection-start-line="2849" selection-start-column="4" selection-end-line="2849" selection-end-column="5" />
+        <state relative-caret-position="108">
+          <caret line="2911" column="4" lean-forward="false" selection-start-line="2911" selection-start-column="4" selection-end-line="2911" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second_project/task_2_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second_project/task_2_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="114" column="35" lean-forward="false" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/second_project/task_2_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="53" column="10" lean-forward="false" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+        <state relative-caret-position="510">
+          <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding />
         </state>
       </provider>
