@@ -12,5 +12,5 @@ Pattern Recognition projects for [b-it](http://www.b-it-center.de/)
 8. Asif Altaf
 9. Pooja Bhatia
 10. Akhilesh Vyas
- 
+11. Omid Najaee Nezhad
 
