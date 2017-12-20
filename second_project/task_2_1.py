@@ -4,59 +4,91 @@ from numpy.linalg import inv
 import matplotlib.pyplot as plt
 import sys
 
-def predict(x,w):
-    x_vec = np.array([x ** i for i in range(len(w))])
-    prediction = np.matmul(w, np.transpose(x_vec))
-    return prediction
 
-def leastSquares(X_design,Ys):
 
-    X_T_X = np.matmul(np.transpose(X_design), X_design)
+def predict(X_design, theta):
+    predictions = np.matmul(X_design,theta)
+    return predictions
+
+def leastSquaresUnstable(X_design, Y):
+    X_T_X = np.matmul(X_design.T, X_design)
     inverse = np.linalg.inv(X_T_X)
-    theta_MLE = np.matmul(np.matmul(inverse, np.transpose(X_design)), Ys)
+    theta_MLE = np.matmul(np.matmul(inverse, X_design.T), Y)
 
     return theta_MLE
+
+def leastSquaresStable(X_design, Y):
+    theta_MLE = np.matmul(np.linalg.pinv(X_design), Y)
+
+    return theta_MLE
+
+def commputeDesignX(X,d):
+    X_design = np.array([[x ** (i) for i in range(d + 1)] for x in X])
+
+    return X_design
+
+# def leastSquares(X_design,Ys):
+#
+#     X_T_X = np.matmul(np.transpose(X_design), X_design)
+#     inverse = np.linalg.inv(X_T_X)
+#     theta_MLE = np.matmul(np.matmul(inverse, np.transpose(X_design)), Ys)
+#
+#     return theta_MLE
 
 if __name__ == '__main__':
     dataPath = '../data/first_project/whData.dat'
     data = np.loadtxt(dataPath, dtype=np.object, comments='#', delimiter=None)
-    ws = []
-    hs = []
-    gs = []
+    ws = data[:, 0].astype('int32')
+    hs = data[:, 1].astype('int32')
+    gs = data[:, 2]
 
-    for d in data:
-        ws.append(d[0])
-        hs.append(d[1])
-        gs.append(d[2])
+    wsAll = np.array(ws, dtype=float)
+    hsAll = np.array(hs, dtype=float)
+    gsAll = np.array(gs)
 
-    ws = np.array(ws,dtype=float)
-    hs = np.array(hs,dtype=float)
-    gs = np.array(gs)
-
+    # Remove outliers
     wIndex = ((ws > 0) * 1).nonzero()
-    ws = ws[wIndex]
-    hs = hs[wIndex]
-    gs = gs[wIndex]
+    wIndexOutliers = ((ws < 0) * 1).nonzero()
+
+    ws = wsAll[wIndex]
+    hs = hsAll[wIndex]
+    gs = gsAll[wIndex]
+
+    hsOut = hs[wIndexOutliers]
 
     Ds = [1,5,10]
-    # fig = plt.figure(figsize=(8, 8))
-    # ax1 = fig.add_subplot(111)
-    # ax1.set_ylim([-200, 200])
-    # ax1.scatter([float(d[1]) for d in data], [float(d[0]) for d in data], label='Data')
-    #
-    # for d in Ds:
-    #     w = leastSquares(hs,ws,d=d)
-    #     l = 'Polynomial of degree: '+ str(d)
-    #     ax1.scatter([float(d[1]) for d in data], [predict(float(d[1]), w) for d in data], label=l)
-    #
-    # plt.legend()
-    # plt.show()
+    colors = ['r--','g--','y--']
+    colorsScatter = ['r', 'g', 'y']
+    xs = np.linspace(150, 200, 1000)
+    plt.figure(figsize=(10,10))
+    plt.scatter(hsAll, wsAll, label='Data')
 
-    d = 5
-    X_design = np.array([[x ** (i) for i in range(d + 1)] for x in hs])
-    theta_MLE = leastSquares(X_design=X_design,Ys=ws)
-    for x_i in data:
-        height = float(x_i[1])
-        prediction = predict(height,theta_MLE)
-        print("height: %f  predicted weight: %f" % (height,prediction))
+    for i,d in enumerate(Ds):
+        X_design = commputeDesignX(X=hs, d=d)
+        theta_MLE_unstable = leastSquaresUnstable(X_design=X_design,Y=ws)
+        theta_MLE_Stable = leastSquaresStable(X_design=X_design,Y=ws)
+        print("d: %d    theta_MLE_unstable: %s \n" % (d, theta_MLE_unstable))
+        print("d: %d    theta_MLE_Stable: %s \n" % (d,theta_MLE_Stable))
+        # Predictions for outliers
+        X_design_Out = commputeDesignX(hsOut,d=d)
+        predsOutliers = predict(X_design=X_design_Out, theta=theta_MLE_Stable)
+        for j,predO in enumerate(predsOutliers):
+            print("height: %f  predicted weight: %f" % (hsOut[j], predsOutliers[j]))
+        print('------------------')
+
+        predictions = predict(X_design=X_design, theta=theta_MLE_Stable)
+        X_design_xs = commputeDesignX(xs, d=d)
+        ys = predict(X_design=X_design_xs, theta=theta_MLE_Stable)
+
+        # Plot
+        plt.xlabel('Height')
+        plt.ylabel('Weight')
+        label = 'd=' + str(d)
+        plt.ylim([-10, 200])
+        plt.scatter(hs, predictions, color=colorsScatter[i],label=label)
+        plt.plot(xs, ys, colors[i])
+        plt.legend()
+
+    plt.show()
+
 

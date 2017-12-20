@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
+
 def predict(X_design, theta):
     predictions = np.matmul(X_design,theta)
     return predictions
