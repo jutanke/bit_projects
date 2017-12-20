@@ -65,6 +65,7 @@ if __name__ == '__main__':
 
     for i,d in enumerate(Ds):
         X_design = commputeDesignX(X=hs, d=d)
+        X_designAll = commputeDesignX(X=hsAll, d=d)
         theta_MLE_unstable = leastSquaresUnstable(X_design=X_design,Y=ws)
         theta_MLE_Stable = leastSquaresStable(X_design=X_design,Y=ws)
         print("d: %d    theta_MLE_unstable: %s \n" % (d, theta_MLE_unstable))
@@ -76,7 +77,7 @@ if __name__ == '__main__':
             print("height: %f  predicted weight: %f" % (hsOut[j], predsOutliers[j]))
         print('------------------')
 
-        predictions = predict(X_design=X_design, theta=theta_MLE_Stable)
+        predictions = predict(X_design=X_designAll, theta=theta_MLE_Stable)
         X_design_xs = commputeDesignX(xs, d=d)
         ys = predict(X_design=X_design_xs, theta=theta_MLE_Stable)
 
@@ -85,7 +86,7 @@ if __name__ == '__main__':
         plt.ylabel('Weight')
         label = 'd=' + str(d)
         plt.ylim([-10, 200])
-        plt.scatter(hs, predictions, color=colorsScatter[i],label=label)
+        plt.scatter(hsAll, predictions, color=colorsScatter[i],label=label)
         plt.plot(xs, ys, colors[i])
         plt.legend()
 
