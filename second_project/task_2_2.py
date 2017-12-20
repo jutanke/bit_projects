@@ -18,10 +18,12 @@ if __name__ == '__main__':
     wIndex = ((ws > 0) * 1).nonzero()
     wIndexOutliers = ((ws < 0) * 1).nonzero()
 
+
     hsOut = hs[wIndexOutliers]
     ws = ws[wIndex]
     hs = hs[wIndex]
     gs = gs[wIndex]
+
 
     # Shape = (#variables,#values)
     X = np.array([ws,hs],dtype=float)

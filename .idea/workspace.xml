@@ -4,6 +4,7 @@
     <list default="true" id="32748c39-7702-422e-88d6-5c5fa2c4b01a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second_project/task_2_1.py" afterPath="$PROJECT_DIR$/second_project/task_2_1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second_project/task_2_2.py" afterPath="$PROJECT_DIR$/second_project/task_2_2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,20 +16,20 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/bit_projects$task_1_3.coverage" NAME="task_1_3 Coverage Results" MODIFIED="1511178473244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_1_4.coverage" NAME="task_1_4 Coverage Results" MODIFIED="1511007090814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
-    <SUITE FILE_PATH="coverage/bit_projects$task_2_2.coverage" NAME="task_2_2 Coverage Results" MODIFIED="1513686203180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_2_4.coverage" NAME="task_2_4 Coverage Results" MODIFIED="1513686220855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
+    <SUITE FILE_PATH="coverage/bit_projects$task_2_2.coverage" NAME="task_2_2 Coverage Results" MODIFIED="1513797743037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_2_5.coverage" NAME="task_2_5 Coverage Results" MODIFIED="1513686229990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$whExample.coverage" NAME="whExample Coverage Results" MODIFIED="1510175096454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
-    <SUITE FILE_PATH="coverage/bit_projects$task_2_1.coverage" NAME="task_2_1 Coverage Results" MODIFIED="1513778937692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
+    <SUITE FILE_PATH="coverage/bit_projects$task_2_1.coverage" NAME="task_2_1 Coverage Results" MODIFIED="1513798164019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_1_5.coverage" NAME="task_1_5 Coverage Results" MODIFIED="1511713329678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
-    <SUITE FILE_PATH="coverage/bit_projects$task_2_3.coverage" NAME="task_2_3 Coverage Results" MODIFIED="1513778793737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
+    <SUITE FILE_PATH="coverage/bit_projects$task_2_3.coverage" NAME="task_2_3 Coverage Results" MODIFIED="1513798093412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="task_2_3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/second_project/task_2_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="712">
               <caret line="114" column="35" lean-forward="false" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
@@ -40,11 +41,31 @@
       <file leaf-file-name="task_2_1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/second_project/task_2_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="76" column="84" lean-forward="true" selection-start-line="76" selection-start-column="84" selection-end-line="76" selection-end-column="84" />
+            <state relative-caret-position="492">
+              <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="whData.dat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/first_project/whData.dat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task_2_2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/second_project/task_2_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,6 +98,7 @@
       <find>sys</find>
       <find>data</find>
       <find>in</find>
+      <find>174</find>
     </findStrings>
     <replaceStrings>
       <replace>np.log10</replace>
@@ -98,11 +120,11 @@
         <option value="$PROJECT_DIR$/first_project/task_1_3.py" />
         <option value="$PROJECT_DIR$/first_project/task_1_5.py" />
         <option value="$PROJECT_DIR$/project1/.ipynb_checkpoints/final_solution-checkpoint.ipynb" />
-        <option value="$PROJECT_DIR$/second_project/task_2_2.py" />
         <option value="$PROJECT_DIR$/second_project/task_2_4.py" />
         <option value="$PROJECT_DIR$/second_project/task_2_5.py" />
         <option value="$PROJECT_DIR$/second_project/task_2_3.py" />
         <option value="$PROJECT_DIR$/second_project/task_2_1.py" />
+        <option value="$PROJECT_DIR$/second_project/task_2_2.py" />
       </list>
     </option>
   </component>
@@ -112,7 +134,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="146" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -134,8 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,6 +205,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,9 +334,9 @@
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.task_2_1" />
         <item index="1" class="java.lang.String" itemvalue="Python.task_2_3" />
-        <item index="2" class="java.lang.String" itemvalue="Python.task_2_5" />
-        <item index="3" class="java.lang.String" itemvalue="Python.task_2_4" />
-        <item index="4" class="java.lang.String" itemvalue="Python.task_2_2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.task_2_2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.task_2_5" />
+        <item index="4" class="java.lang.String" itemvalue="Python.task_2_4" />
       </list>
     </recent_temporary>
   </component>
@@ -427,23 +449,30 @@
       <option name="project" value="LOCAL" />
       <updated>1513778442775</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Corrected task 2_1">
+      <created>1513778953477</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1513778953477</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="146" y="23" width="1440" height="834" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="834" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22818312" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30175912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2976996" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -664,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="121" column="36" lean-forward="false" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -727,28 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/first_project/whData.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/second_project/task_2_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/second_project/task_2_4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
           <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -756,9 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
           <caret line="40" column="77" lean-forward="false" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -770,9 +774,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/first_project/whData.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/second_project/task_2_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
+        <state relative-caret-position="712">
           <caret line="114" column="35" lean-forward="false" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
@@ -780,10 +792,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/second_project/task_2_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/second_project/task_2_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="76" column="84" lean-forward="true" selection-start-line="76" selection-start-column="84" selection-end-line="76" selection-end-column="84" />
+        <state relative-caret-position="492">
+          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
           </folding>

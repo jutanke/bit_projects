@@ -50,11 +50,13 @@ if __name__ == '__main__':
     wIndex = ((ws > 0) * 1).nonzero()
     wIndexOutliers = ((ws < 0) * 1).nonzero()
 
+    print(wIndexOutliers)
+
     ws = wsAll[wIndex]
     hs = hsAll[wIndex]
     gs = gsAll[wIndex]
 
-    hsOut = hs[wIndexOutliers]
+    hsOut = hsAll[wIndexOutliers]
 
     Ds = [1,5,10]
     colors = ['r--','g--','y--']
