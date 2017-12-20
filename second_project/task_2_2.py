@@ -31,14 +31,28 @@ if __name__ == '__main__':
     # Compute parameters of bivariate Gaussian
     meanWeight = np.mean(ws)
     meanHeight = np.mean(hs)
-    sdWeight = np.std(ws)
-    sdHeight = np.mean(hs)
-    cov_h_w = np.cov(X)[0,1]
+    sdWeight = np.sqrt(np.var(ws,ddof=1))#np.std(ws)
+    sdHeight = np.sqrt(np.var(hs,ddof=1))#np.mean(hs)
+    cov_h_w = np.cov(X,bias=False)[0,1]
     pearsonCor = cov_h_w/(sdHeight*sdWeight)
 
 
     # Predict weights for outliers
+    print('-------Unbiased-------')
     for hOut in hsOut:
         predWeight = meanWeight + pearsonCor*(sdWeight/sdHeight)*(hOut-meanHeight)
         print("height of outlier: %f  predicted weight: %f" % (hOut, predWeight))
 
+    # Second Version: SDs are biased
+    meanWeight = np.mean(ws)
+    meanHeight = np.mean(hs)
+    sdWeight = np.std(ws)
+    sdHeight = np.mean(hs)
+    cov_h_w = np.cov(X, bias=True)[0, 1]
+    pearsonCor = cov_h_w / (sdHeight * sdWeight)
+
+    print()
+    print('------------------')
+    for hOut in hsOut:
+        predWeight = meanWeight + pearsonCor*(sdWeight/sdHeight)*(hOut-meanHeight)
+        print("height of outlier: %f  predicted weight: %f" % (hOut, predWeight))
