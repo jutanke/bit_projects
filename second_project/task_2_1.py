@@ -27,13 +27,6 @@ def commputeDesignX(X,d):
 
     return X_design
 
-# def leastSquares(X_design,Ys):
-#
-#     X_T_X = np.matmul(np.transpose(X_design), X_design)
-#     inverse = np.linalg.inv(X_T_X)
-#     theta_MLE = np.matmul(np.matmul(inverse, np.transpose(X_design)), Ys)
-#
-#     return theta_MLE
 
 if __name__ == '__main__':
     dataPath = '../data/first_project/whData.dat'
