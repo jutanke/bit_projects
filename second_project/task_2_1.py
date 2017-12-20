@@ -43,8 +43,6 @@ if __name__ == '__main__':
     wIndex = ((ws > 0) * 1).nonzero()
     wIndexOutliers = ((ws < 0) * 1).nonzero()
 
-    print(wIndexOutliers)
-
     ws = wsAll[wIndex]
     hs = hsAll[wIndex]
     gs = gsAll[wIndex]
