@@ -70,7 +70,7 @@ if __name__ == '__main__':
 
     # Compute theta based on feature based design matrix
     n = 3
-    S = [i +1 for i in range(n)]
+    # S = [i +1 for i in range(n)]
     tupleList = reversed(list(itertools.product([0, 1], repeat=n)))
     X_design = [list(tuple) for tuple in tupleList]
     X_design = np.array([[1. if float(x) == 1 else -1. for x in subList] for subList in X_design])
