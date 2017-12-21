@@ -4,7 +4,6 @@
     <list default="true" id="32748c39-7702-422e-88d6-5c5fa2c4b01a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second_project/task_2_4.py" afterPath="$PROJECT_DIR$/second_project/task_2_4.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +16,7 @@
     <SUITE FILE_PATH="coverage/bit_projects$task_1_3.coverage" NAME="task_1_3 Coverage Results" MODIFIED="1511178473244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_1_4.coverage" NAME="task_1_4 Coverage Results" MODIFIED="1511007090814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_2_2.coverage" NAME="task_2_2 Coverage Results" MODIFIED="1513808593482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
-    <SUITE FILE_PATH="coverage/bit_projects$task_2_4.coverage" NAME="task_2_4 Coverage Results" MODIFIED="1513860325236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
+    <SUITE FILE_PATH="coverage/bit_projects$task_2_4.coverage" NAME="task_2_4 Coverage Results" MODIFIED="1513860719013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_2_5.coverage" NAME="task_2_5 Coverage Results" MODIFIED="1513686229990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
     <SUITE FILE_PATH="coverage/bit_projects$whExample.coverage" NAME="whExample Coverage Results" MODIFIED="1510175096454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/first_project" />
     <SUITE FILE_PATH="coverage/bit_projects$task_2_1.coverage" NAME="task_2_1 Coverage Results" MODIFIED="1513808645765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/second_project" />
@@ -29,8 +28,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+            <state relative-caret-position="338">
+              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -51,7 +50,7 @@
       <file leaf-file-name="task_2_4.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/second_project/task_2_4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="-592">
               <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
@@ -179,6 +178,12 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="bit_projects" type="cbb8eebc:String" user="bit_projects" />
               <item name="bit_projects" type="cbb8eebc:String" user="bit_projects" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="bit_projects" type="cbb8eebc:String" user="bit_projects" />
+              <item name="bit_projects" type="cbb8eebc:String" user="bit_projects" />
+              <item name=".idea" type="cbb8eebc:String" user=".idea" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -529,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513808617984</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Minor changes">
+      <created>1513860618749</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1513860618749</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -901,7 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/second_project/task_2_4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="-592">
           <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
@@ -911,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="338">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding />
         </state>
       </provider>
