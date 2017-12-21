@@ -1,0 +1,277 @@
+'''
+Created on 12 Dec 2017
+
+@author: seyit
+'''
+import numpy as np
+import scipy as sp
+import time 
+from scipy import spatial
+import math
+import matplotlib.pyplot as plt
+from enum import Enum
+import os
+from numpy.linalg import norm
+
+np.set_printoptions(precision=1)
+points = np.genfromtxt('data2-train.dat',
+                  dtype=float,
+                  comments='#',
+                  delimiter=None)
+
+fig = plt.figure(figsize=(8,8))
+fig.suptitle('dimension selection: alternate x and y\n split: median', fontsize=10)
+fig2 = plt.figure(figsize=(8,8))
+fig2.suptitle('dimension selection: variance\n split: median', fontsize=10)
+fig3 = plt.figure(figsize=(8,8))
+fig3.suptitle('dimension selection: alternate x and y\n split: midpoint', fontsize=10)
+fig4 = plt.figure(figsize=(8,8))
+fig4.suptitle('dimension selection: variance\n split: midpoint', fontsize=10)
+ax = fig.add_subplot(111)
+axx = fig2.add_subplot(111)
+bx = fig3.add_subplot(111)
+bxx = fig4.add_subplot(111)
+
+class NodeType(Enum):
+    LEFT = 0
+    RIGHT = 1
+class DimensionSelection(Enum):    
+    ALTERNATE = 0
+    VARIANCE = 1
+class SplitType(Enum):
+    MIDPOINT = 0
+    MEDIAN = 1
+
+class Node:
+    def __init__(self, point=None, left=None, right=None, depth=None, axis=None, parent=None, nodetype = None):
+        self.point = point
+        self.left = left
+        self.right = right
+        self.depth = depth
+        self.axis = axis
+        self.parent = parent
+        self.nodetype = nodetype
+'''an auxiliary function for counting the nodes of given binary tree'''        
+def CountNodes(tree, count):
+    count = 1
+    if tree.left != None:
+        count += CountNodes(tree.left, count)
+    if tree.right != None:
+        count += CountNodes(tree.right, count)
+    return count
+
+'''function for computing a kd-tree for k=2. 
+it allows for four different means of construction regarding the separating dimension
+and split point selections'''
+def BuildKDTree(node, points, depth, parent, nodetype, dim, sp):
+    if dim == DimensionSelection.ALTERNATE:
+        axis = depth % 2
+    else:
+        axis = 0 if np.var(points, 0)[0] > np.var(points, 0)[1] else 1
+    if sp == SplitType.MEDIAN: #sort given points then get the one in the middle
+        points = points[points[:,axis].argsort()] 
+        index = int(math.floor(points.shape[0]/2))
+    else:
+        index = int(math.floor(points.shape[0]/2)) #find the mid point
+    node = Node(point = points[index], depth=depth, axis = axis, parent = parent, nodetype=nodetype)
+    if(points.size > 3):
+        node.right = BuildKDTree(node.right, points[:index], depth=depth+1, parent = node, nodetype=NodeType.LEFT, dim = dim, sp = sp)
+        node.left = BuildKDTree(node.left, points[index:], depth=depth+1, parent = node, nodetype=NodeType.RIGHT, dim = dim, sp = sp)
+        return node
+    else:
+        return None
+    
+ax.set_xlim((120, 220))
+ax.set_ylim((30, 120))
+axx.set_xlim((120, 220))
+axx.set_ylim((30, 120))
+bx.set_xlim((120, 220))
+bx.set_ylim((30, 120))
+bxx.set_xlim((120, 220))
+bxx.set_ylim((30, 120))
+
+'''auxiliary function for plotting a kd-tree'''
+def ReverseAxis(axis):
+    return int(math.fabs(axis - 1))
+
+'''function for searching a kd-tree for a parent node with the given axis'''
+def SearchParent(node, axis): 
+    search = node
+    while search.parent != None:
+        if search.parent.axis == axis:
+            return search.parent
+        else:
+            search = search.parent 
+    
+class Line:
+    def __init__(self, pointA=None, pointB = None, axis = None):
+        self.pointA = pointA
+        self.pointB = pointB
+        self.axis = axis
+        
+'''auxiliary function used for plotting a kd-tree. 
+get the distance of a point to a line'''        
+def GetDistance(point, line):
+    point = [point[0], point[1]]
+    return norm(np.cross(line.pointB-line.pointA, line.pointA-np.array(point)))/norm(line.pointB-line.pointA)
+
+'''auxiliary function used for plotting a kd-tree. 
+get the end point in a line along the given axis obeying the given constraint '''
+def GetEndPoint(line, axis, constraint):
+    if constraint == 'greater':
+        if line.pointA[axis] > line.pointB[axis]:
+            return line.pointA[axis] 
+        else:
+            return line.pointB[axis] 
+    else:
+        if line.pointA[axis] < line.pointB[axis]:
+            return line.pointA[axis] 
+        else:
+            return line.pointB[axis] 
+        
+'''auxiliary function used for plotting a kd-tree.
+a naive method of finding the end points of a line that goes through the given point
+and does not intersect with the previously drawn lines whose axes are the opposite of the line to be drawn'''
+def SearchLines(lines, axis, constraint, point):
+    match = [line for line in lines if line.axis == axis]
+    if constraint =='greater':
+        if match == []:
+            if axis == 0:
+                return 220
+            else:
+                return 120
+        else:
+            d = 9999
+            if axis == 1:
+                hy = 120
+                for line in match:
+                    if line.pointB[1] >= point[1] and GetEndPoint(line, 0, 'greater') >= point[0]: 
+                        if point[0] > GetEndPoint(line, 0, 'less'):
+                            d_compare = GetDistance(point, line)
+                            if d_compare <= d:
+                                hy = line.pointA[1]
+                                d = d_compare
+                return hy
+            else:
+                hx = 220
+                for line in match:
+                    if line.pointA[0] >= point[0] and GetEndPoint(line, 1, 'greater') >= point[1]:
+                        if point[1] > GetEndPoint(line, 1, 'less'):
+                            d_compare = GetDistance(point, line)
+                            if d_compare <= d:
+                                hx = line.pointA[0]
+                                d = d_compare
+                return hx
+    else:
+        if match == []:
+            if axis == 0:
+                return 0
+            else:
+                return 0
+        else:
+            d = 9999
+            if axis == 1:
+                ly = 0
+                for line in match:
+                    if line.pointA[1] < point[1] and GetEndPoint(line, 0, 'greater') > point[0]:
+                        if point[0] > GetEndPoint(line, 0, 'less'):
+                            d_compare = GetDistance(point, line)
+                            if d_compare <= d:
+                                ly = line.pointA[1]
+                                d = d_compare
+                return ly
+            else:
+                lx = 0
+                for line in match:
+                    if line.pointA[0] < point[0] and GetEndPoint(line, 1, 'greater') > point[1]:
+                        if point[1] > GetEndPoint(line, 1, 'less'):
+                            d_compare = GetDistance(point, line)
+                            if d_compare <= d:
+                                lx = line.pointA[0]
+                                d = d_compare
+                return lx    
+
+'''recursive function for plotting a kd-tree with k = 2. '''    
+def PlotKDTree(node, lines, ax):
+    if node.parent == None:
+        if node.axis == 0:
+            ax.plot([node.point[0], node.point[0]], [0, 120], color='black')
+            lines.append(Line(pointA=np.array([node.point[0], 0]), pointB=np.array([node.point[0], 120]), axis = node.axis))
+        else:
+            ax.plot([0, 220], [node.point[1], node.point[1]], color='green')
+            lines.append(Line(pointA=np.array([0, node.point[1]]), pointB=np.array([220, node.point[1]]), axis = node.axis))   
+    else:
+        if node.axis == 0: #axis == x
+            ly = SearchLines(lines, ReverseAxis(node.axis), constraint = 'less', #get the lowest y 
+                                 point = node.point)
+            hy = SearchLines(lines, ReverseAxis(node.axis), constraint = 'greater', #get the highest y
+                                 point = node.point)
+            ax.plot([node.point[0], node.point[0]], [ly, hy], color='black')
+            lines.append(Line(pointA=np.array([node.point[0], ly]), pointB=np.array([node.point[0], hy]), axis = node.axis))
+        else:
+            lx = SearchLines(lines, ReverseAxis(node.axis), constraint = 'less', #get the lowest x
+                                 point = node.point)
+            hx = SearchLines(lines, ReverseAxis(node.axis), constraint = 'greater', #get the highest x
+                                 point = node.point)
+            ax.plot([lx, hx], [node.point[1], node.point[1]], color='green')
+            lines.append(Line(pointA=np.array([lx, node.point[1]]), pointB=np.array([hx, node.point[1]]), axis = node.axis))
+    if node.left != None:
+        PlotKDTree(node.left, lines, ax)  
+    if node.right != None:
+        PlotKDTree(node.right, lines, ax)
+        
+def SearchNearestNeighbour(query, node, ref_point, ref_d):
+    p = [node.point[0], node.point[1]]
+    ref_point = [ref_point[0], ref_point[1]]
+    if node.right == None and node.left == None:
+        new_d = spatial.distance.euclidean(query, p)
+        if new_d < ref_d:
+            ref_d = new_d
+            ref_point = p
+    else:
+        if query[node.axis] <= node.point[node.axis]:
+            go = 'left'
+        else:
+            go = 'right'
+        if go == 'left':
+            if query[node.axis] - ref_d <= node.point[node.axis]:
+                SearchNearestNeighbour(query, node.left, ref_point, ref_d)
+            if query[node.axis] + ref_d > node.point[node.axis]:
+                SearchNearestNeighbour(query, node.right, ref_point, ref_d)
+        else:
+            if query[node.axis] + ref_d > node.point[node.axis]:
+                SearchNearestNeighbour(query, node.right, ref_point, ref_d)
+            if query[node.axis] - ref_d <= node.point[node.axis]:
+                SearchNearestNeighbour(query, node.left, ref_point, ref_d)    
+            
+rootAlternateMED = Node() 
+rootVarianceMED = Node()
+rootAlternateMID = Node()
+rootVarianceMID = Node()     
+rootAlternateMED = BuildKDTree(rootAlternateMED, points, depth = 0, parent = None, nodetype = None, 
+                   dim = DimensionSelection.ALTERNATE, sp = SplitType.MEDIAN)
+rootVarianceMED = BuildKDTree(rootVarianceMED, points, depth = 0, parent = None, nodetype = None, 
+                   dim = DimensionSelection.VARIANCE, sp = SplitType.MEDIAN)
+rootAlternateMID = BuildKDTree(rootAlternateMID, points, depth = 0, parent = None, nodetype = None, 
+                   dim = DimensionSelection.ALTERNATE, sp = SplitType.MIDPOINT)
+rootVarianceMID = BuildKDTree(rootVarianceMID, points, depth = 0, parent = None, nodetype = None, 
+                   dim = DimensionSelection.VARIANCE, sp = SplitType.MIDPOINT)
+    
+PlotKDTree(rootAlternateMED, lines = [], ax = ax)
+PlotKDTree(rootVarianceMED, lines = [], ax = axx)
+PlotKDTree(rootAlternateMID, lines = [], ax = bx)
+PlotKDTree(rootVarianceMID, lines = [], ax = bxx)
+
+start = time.time()
+for point in points:
+    point = [point[0], point[1]]
+    SearchNearestNeighbour(point, rootAlternateMED, rootAlternateMED.point, 9999)
+end = time.time()
+print('using alternate + median\ntime elapsed for finding 1 nearest neighbour of all points in data: ', end - start)
+start = time.time()
+for point in points:
+    point = [point[0], point[1]]
+    SearchNearestNeighbour(point, rootVarianceMED, rootVarianceMED.point, 9999)
+end = time.time()
+print('using variance + median\ntime elapsed for finding 1 nearest neighbour of all points in data: ', end - start)
+plt.show()
