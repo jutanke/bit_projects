@@ -104,10 +104,10 @@ if __name__ == "__main__":
      source: https://glowingpython.blogspot.de/2012/07/distribution-fitting-with-scipy.html
     '''
     mu, std = norm.fit(hs)
-    print "Empirical mean: %f " % np.mean(hs)
-    print "Empirical sd: %f " % np.std(hs)
-    print "Fitted mean: ", mu
-    print "Fitted std: ", std
+    print("Empirical mean: %f " % np.mean(hs))
+    print("Empirical sd: %f " % np.std(hs))
+    print("Fitted mean: ", mu)
+    print("Fitted std: ", std)
     # plot heights into the figure. Points shall lie on x axis -> all y values are 0
     plt.scatter(x=hs,y=[0. for i in range(len(hs))])
 
