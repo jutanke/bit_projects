@@ -3,25 +3,24 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import sys
 
+
 def multiClassLDA(X,Y,k):
-    label_1_indices = np.ndarray.flatten(np.argwhere((Y == 1) * 1.))
-    label_2_indices = np.ndarray.flatten(np.argwhere((Y == 2) * 1.))
-    label_3_indices = np.ndarray.flatten(np.argwhere((Y == 3) * 1.))
-    X_1 = X.T[label_1_indices].T
-    X_2 = X.T[label_2_indices].T
-    X_3 = X.T[label_3_indices].T
-
     mu = np.reshape(np.mean(X, axis=1), newshape=(X.shape[0], 1))
-    mu_1 = np.reshape(np.mean(X_1, axis=1), newshape=(X_1.shape[0], 1))
-    mu_2 = np.reshape(np.mean(X_2, axis=1), newshape=(X_2.shape[0], 1))
-    mu_3 = np.reshape(np.mean(X_3, axis=1), newshape=(X_3.shape[0], 1))
+    uniqueLabels = np.unique(Y)
 
-    X_Cov_1 = np.cov(X_1, rowvar=1, ddof=1)
-    X_Cov_2 = np.cov(X_2, rowvar=1, ddof=1)
-    X_Cov_3 = np.cov(X_3, rowvar=1, ddof=1)
+    m,n = X.shape
+    S_B = np.zeros(shape=(m,m))
+    S_W = np.zeros(shape=(m,m))
 
-    S_B = np.matmul(mu_1-mu,(mu_1-mu).T) + np.matmul(mu_2-mu,(mu_2-mu).T) + np.matmul(mu_3-mu,(mu_3-mu).T)
-    S_W = X_Cov_1 + X_Cov_2 + X_Cov_3
+    print(S_B.shape)
+
+    for l in uniqueLabels:
+        label_indices = np.ndarray.flatten(np.argwhere((Y == l) * 1.))
+        X_l = X.T[label_indices].T
+        mu_l = np.reshape(np.mean(X_l, axis=1), newshape=(X_l.shape[0], 1))
+        cov_l = np.cov(X_l, rowvar=1, ddof=1)
+        S_B += np.matmul(mu_l-mu,(mu_l-mu).T)
+        S_W += cov_l
 
     print("Shape of S_B: ",S_B.shape)
     print("Shape of S_W: ", S_W.shape)
@@ -35,6 +34,39 @@ def multiClassLDA(X,Y,k):
     Z = np.matmul(decoder.T, X)
 
     return Z
+
+# def multiClassLDA(X,Y,k):
+#     label_1_indices = np.ndarray.flatten(np.argwhere((Y == 1) * 1.))
+#     label_2_indices = np.ndarray.flatten(np.argwhere((Y == 2) * 1.))
+#     label_3_indices = np.ndarray.flatten(np.argwhere((Y == 3) * 1.))
+#     X_1 = X.T[label_1_indices].T
+#     X_2 = X.T[label_2_indices].T
+#     X_3 = X.T[label_3_indices].T
+#
+#     mu = np.reshape(np.mean(X, axis=1), newshape=(X.shape[0], 1))
+#     mu_1 = np.reshape(np.mean(X_1, axis=1), newshape=(X_1.shape[0], 1))
+#     mu_2 = np.reshape(np.mean(X_2, axis=1), newshape=(X_2.shape[0], 1))
+#     mu_3 = np.reshape(np.mean(X_3, axis=1), newshape=(X_3.shape[0], 1))
+#
+#     X_Cov_1 = np.cov(X_1, rowvar=1, ddof=1)
+#     X_Cov_2 = np.cov(X_2, rowvar=1, ddof=1)
+#     X_Cov_3 = np.cov(X_3, rowvar=1, ddof=1)
+#
+#     S_B = np.matmul(mu_1-mu,(mu_1-mu).T) + np.matmul(mu_2-mu,(mu_2-mu).T) + np.matmul(mu_3-mu,(mu_3-mu).T)
+#     S_W = X_Cov_1 + X_Cov_2 + X_Cov_3
+#
+#     print("Shape of S_B: ",S_B.shape)
+#     print("Shape of S_W: ", S_W.shape)
+#
+#     eigenVals, eigenDecoder = np.linalg.eigh(np.matmul(np.linalg.pinv(S_W),S_B))
+#     eigenVals = np.flip(eigenVals, axis=-1)
+#     eigenDecoder = np.flip(eigenDecoder, axis=1)
+#     # Take frst k columns of the decoder
+#     decoder = eigenDecoder[:, :k]
+#
+#     Z = np.matmul(decoder.T, X)
+#
+#     return Z
 
 def applyPCA(X,k):
     m, n = X.shape
