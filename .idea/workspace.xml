@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32748c39-7702-422e-88d6-5c5fa2c4b01a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/third_project/task_3_3.py" afterPath="$PROJECT_DIR$/third_project/task_3_3.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/bit_projects.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,8 +46,8 @@
       <file leaf-file-name="task_3_3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/third_project/task_3_3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="147" column="14" lean-forward="true" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
+            <state relative-caret-position="156">
+              <caret line="119" column="41" lean-forward="true" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -203,6 +206,11 @@
           <expand>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="bit_projects" type="cbb8eebc:String" user="bit_projects" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="bit_projects" type="cbb8eebc:String" user="bit_projects" />
               <item name="bit_projects" type="cbb8eebc:String" user="bit_projects" />
             </path>
           </expand>
@@ -586,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516309769236</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Finished 3_3">
+      <created>1516782715238</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1516782715238</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -639,7 +654,8 @@
     <MESSAGE value="Finished first part of task_3_3 (PCA)" />
     <MESSAGE value="Finished second part of task_3_3 (LDA)" />
     <MESSAGE value="Adapted second part of task_3_3 (LDA)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted second part of task_3_3 (LDA)." />
+    <MESSAGE value="Finished 3_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished 3_3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1021,8 +1037,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/third_project/task_3_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="147" column="14" lean-forward="true" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
+        <state relative-caret-position="156">
+          <caret line="119" column="41" lean-forward="true" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
