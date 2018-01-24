@@ -113,9 +113,13 @@ if __name__ == '__main__':
     print("Shape of X: ",X.shape)
     print("Shape of Y: ", Y.shape)
 
-    fig = plt.figure(figsize=(10, 10))
-    ax1 = fig.add_subplot(121)
-    ax2 = fig.add_subplot(122)
+    fig = plt.figure(figsize=(8, 8))
+    ax1 = fig.add_subplot(221)
+    ax2 = fig.add_subplot(222)
+
+    # fig2 = plt.figure(figsize=(10, 10))
+    ax3 = fig.add_subplot(223, projection='3d')
+    ax4 = fig.add_subplot(224, projection='3d')
 
     # PCA
     projectedPCA = applyPCA(X, k)
@@ -127,6 +131,17 @@ if __name__ == '__main__':
     # Multiclass LDA
     projectedLDA = multiClassLDA(X, Y,k)
     ax2.scatter(projectedLDA.T[:, 0], projectedLDA.T[:, 1], c=Y)
+
+    # 3d PCA
+    k=3
+    projectedPCA = applyPCA(X, k)
+    ax3.scatter(projectedPCA.T[:, 0],projectedPCA.T[:, 1],projectedPCA.T[:, 2],c=Y)
+
+    # 3d MLDA
+    projectedLDA = multiClassLDA(X, Y, k)
+    ax4.scatter(projectedLDA.T[:, 0], projectedLDA.T[:, 1], projectedLDA.T[:, 2], c=Y)
+
+
 
 
     # Axes3D.scatter(xs=projected,ys=Y)
